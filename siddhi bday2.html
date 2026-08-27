@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Siddhi 🎂</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3, #8e44ad);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    /* Background glow */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: glow 5s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            transform: scale(0.8);
+        }
+        to {
+            transform: scale(1.3);
+        }
+    }
+
+    .container {
+        position: relative;
+        width: 90%;
+        max-width: 850px;
+        padding: 50px 30px;
+        text-align: center;
+        background: rgba(255,255,255,0.13);
+        border: 1px solid rgba(255,255,255,0.3);
+        backdrop-filter: blur(15px);
+        border-radius: 30px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        z-index: 5;
+        animation: appear 1.5s ease;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: scale(0.7) translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .small {
+        font-size: 20px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        animation: fade 2s infinite alternate;
+    }
+
+    h1 {
+        margin: 15px 0;
+        font-size: clamp(55px, 12vw, 110px);
+        font-family: Georgia, serif;
+        color: #fff;
+        text-shadow:
+            0 0 10px #fff,
+            0 0 25px #ff4da6,
+            0 0 50px #ff1493;
+        animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    .birthday {
+        font-size: clamp(25px, 5vw, 45px);
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .message {
+        max-width: 650px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #fff;
+    }
+
+    .cake {
+        font-size: 70px;
+        margin: 20px 0;
+        animation: cakeBounce 1.5s infinite;
+    }
+
+    @keyframes cakeBounce {
+        0%,100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .wish {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 30px;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #ff1493, #ff69b4);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(255,20,147,0.7);
+        transition: 0.3s;
+    }
+
+    .wish:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(255,255,255,0.8);
+    }
+
+    /* Balloons */
+    .balloon {
+        position: absolute;
+        width: 65px;
+        height: 80px;
+        border-radius: 50%;
+        z-index: 2;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .balloon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100px;
+        background: rgba(255,255,255,0.6);
+        top: 78px;
+        left: 50%;
+    }
+
+    .b1 {
+        background: #ff3b6b;
+        left: 5%;
+        top: 15%;
+    }
+
+    .b2 {
+        background: #ffd93d;
+        right: 7%;
+        top: 10%;
+        animation-delay: 1s;
+    }
+
+    .b3 {
+        background: #6bcBff;
+        left: 12%;
+        bottom: 8%;
+        animation-delay: 2s;
+    }
+
+    .b4 {
+        background: #c77dff;
+        right: 12%;
+        bottom: 12%;
+        animation-delay: 3s;
+    }
+
+    @keyframes float {
+        0%,100% {
+            transform: translateY(0) rotate(-5deg);
+        }
+        50% {
+            transform: translateY(-35px) rotate(5deg);
+        }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        font-size: 25px;
+        animation: heartFloat 7s linear infinite;
+        opacity: 0;
+    }
+
+    .heart:nth-child(1) {
+        left: 20%;
+        animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+        left: 40%;
+        animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+        left: 60%;
+        animation-delay: 4s;
+    }
+
+    .heart:nth-child(4) {
+        left: 80%;
+        animation-delay: 1s;
+    }
+
+    @keyframes heartFloat {
+        0% {
+            bottom: -50px;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        20% {
+            opacity: 1;
+        }
+        100% {
+            bottom: 110%;
+            opacity: 0;
+            transform: scale(1.5) rotate(30deg);
+        }
+    }
+
+    /* Stars */
+    .star {
+        position: absolute;
+        color: #fff;
+        font-size: 15px;
+        animation: twinkle 2s infinite alternate;
+    }
+
+    .s1 { top: 8%; left: 30%; }
+    .s2 { top: 25%; right: 25%; animation-delay: .5s; }
+    .s3 { bottom: 20%; left: 30%; animation-delay: 1s; }
+    .s4 { bottom: 8%; right: 35%; animation-delay: 1.5s; }
+
+    @keyframes twinkle {
+        from {
+            opacity: .2;
+            transform: scale(.7);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+    }
+
+    @media(max-width:600px) {
+        .container {
+            padding: 35px 20px;
+        }
+
+        .small {
+            font-size: 14px;
+        }
+
+        .message {
+            font-size: 15px;
+        }
+
+        .balloon {
+            width: 45px;
+            height: 60px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Balloons -->
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+
+<!-- Stars -->
+<div class="star s1">✨</div>
+<div class="star s2">⭐</div>
+<div class="star s3">✨</div>
+<div class="star s4">⭐</div>
+
+<!-- Floating Hearts -->
+<div class="heart">💖</div>
+<div class="heart">💕</div>
+<div class="heart">💗</div>
+<div class="heart">💝</div>
+
+<div class="container">
+
+    <div class="small">A Special Day For A Special Person</div>
+
+    <div class="cake">🎂</div>
+
+    <div class="birthday">
+        Happy Birthday
+    </div>
+
+    <h1>Siddhi</h1>
+
+    <p class="message">
+        Wishing you a day filled with endless happiness,
+        beautiful memories, lots of laughter and all the
+        love your heart can hold. 💕
+        <br><br>
+        May every dream you have come true and may your
+        smile shine brighter than all the stars. ✨
+        <br><br>
+        Stay happy, stay amazing and keep smiling always! ❤️
+    </p>
+
+    <a href="#" class="wish" onclick="celebrate(event)">
+        🎉 Make a Wish 🎉
+    </a>
+
+</div>
+
+<script>
+function celebrate(event) {
+    event.preventDefault();
+
+    // Create colorful celebration emojis
+    const emojis = ["🎉", "🎊", "💖", "✨", "💕", "🌸", "🥳"];
+
+    for (let i = 0; i < 50; i++) {
+        const item = document.createElement("div");
+
+        item.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.position = "fixed";
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.top = "-30px";
+        item.style.fontSize = (20 + Math.random() * 25) + "px";
+        item.style.zIndex = "100";
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
+
+        const duration = 2000 + Math.random() * 3000;
+
+        item.animate(
+            [
+                {
+                    transform: "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(110vh) rotate(${Math.random() * 720}deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => {
+            item.remove();
+        }, duration);
+    }
+}
+</script>
+
+</body>
+</html>
